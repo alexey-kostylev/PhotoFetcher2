@@ -1,0 +1,20 @@
+<div class="user-profile panel">
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="emailBtn">
+                Enter google account (xxxx@gmail.com):
+            </label>
+        </div>
+        <div class="col-sm-4">
+            <input id="emailBtn" type="email" [(ngModel)]="email" placeholder="Enter email" autofocus />
+        </div>
+        <div class="col-sm-2">
+            <button (click)="onFetchProfile()" [disabled]="!email" class="btn btn-primary small">
+                Fetch profile
+            </button>
+        </div>
+    </div>
+    <div>
+        <app-display-user-profile></app-display-user-profile>
+    </div>
+</div>
