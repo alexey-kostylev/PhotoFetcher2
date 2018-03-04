@@ -15,7 +15,7 @@ export class GoogleFetcherService implements IPhotoFetcher {
    *
    */
   constructor() {
-    //gapi.client.setApiKey(this.apiKey);
+    // gapi.client.setApiKey(this.apiKey);
   }
 
   getUserProfile(userId: string): Observable<ProfileFeed> {
