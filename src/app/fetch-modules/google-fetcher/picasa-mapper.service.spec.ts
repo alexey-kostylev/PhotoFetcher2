@@ -21,7 +21,7 @@ describe('PicasaMapperService', () => {
   it(
     'should parse photo album',
     inject([PicasaMapperService], (service: PicasaMapperService) => {
-      debugger;
+      // debugger;
 
       const loadedAlbum = picasa_album as any;
       const album = service.parsePhotoAlbum(loadedAlbum.feed);
