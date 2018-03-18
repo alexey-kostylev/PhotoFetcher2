@@ -1,4 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  SimpleChange
+} from '@angular/core';
 import { UserProfile } from '../../../models/index';
 
 @Component({
@@ -6,10 +13,12 @@ import { UserProfile } from '../../../models/index';
   templateUrl: './display-user-profile.component.html',
   styleUrls: ['./display-user-profile.component.scss']
 })
-export class DisplayUserProfileComponent implements OnInit {
-  @Input() userProfile: UserProfile;
+export class DisplayUserProfileComponent implements OnInit, OnChanges {
+  @Input() profile: UserProfile;
 
   constructor() {}
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {}
 }

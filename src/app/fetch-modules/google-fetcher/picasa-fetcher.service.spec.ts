@@ -3,7 +3,6 @@ import { TestBed, inject } from '@angular/core/testing';
 import { PicasaFetcherService } from './picasa-fetcher.service';
 
 import * as picasa_response from './test/picasa-response.json';
-import * as picasa_album from './test/picasa-album-response.json';
 
 import {
   HttpModule,

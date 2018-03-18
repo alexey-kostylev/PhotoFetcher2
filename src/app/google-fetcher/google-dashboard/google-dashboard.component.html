@@ -1,4 +1,5 @@
-<p>
-  google-dashboard works!
-</p>
-<app-user-profile></app-user-profile>
+<app-user-profile [email]="email" (onUserId)="onUserId($event)"></app-user-profile>
+<div>
+    <app-display-user-profile *ngIf="!loading" [profile]="userProfile"></app-display-user-profile>
+    <app-spin-loader [loading]="loading"></app-spin-loader>
+</div>

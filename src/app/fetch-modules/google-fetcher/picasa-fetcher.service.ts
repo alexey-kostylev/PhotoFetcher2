@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { UserProfile, ProfileFeed, AlbumEntry } from '../../models';
+import { UserProfile, ProfileFeed, AlbumEntry, PhotoAlbum } from '../../models';
 import { Http, URLSearchParams, RequestOptions, Response } from '@angular/http';
 import { PicasaMapperService } from './picasa-mapper.service';
 
@@ -34,7 +34,7 @@ export class PicasaFetcherService implements IPhotoFetcher {
     });
   }
 
-  getPhotoAlbum(userId: string, albumId: string) {
+  getPhotoAlbum(userId: string, albumId: string): Observable<PhotoAlbum> {
     const url = this.getPhotoAlbumUrl
       .replace(':userId', userId)
       .replace(':albumId', albumId);

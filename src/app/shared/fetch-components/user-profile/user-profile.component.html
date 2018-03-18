@@ -1,20 +1,18 @@
 <div class="user-profile panel">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <label for="emailBtn">
-                Enter google account (xxxx@gmail.com):
+                Enter google account:
             </label>
         </div>
         <div class="col-sm-4">
-            <input id="emailBtn" type="email" [(ngModel)]="email" placeholder="Enter email" autofocus />
+            <!-- <label for="emailBtn">xxxx@gmail.com</label> -->
+            <input id="emailBtn" type="email" [(ngModel)]="email" placeholder="xxx@google.com" autofocus />
         </div>
         <div class="col-sm-2">
-            <button (click)="onFetchProfile()" [disabled]="!email" class="btn btn-primary small">
+            <button (click)="onFetchProfile(email)" [disabled]="!email" class="btn btn-primary small">
                 Fetch profile
             </button>
         </div>
-    </div>
-    <div>
-        <app-display-user-profile></app-display-user-profile>
     </div>
 </div>

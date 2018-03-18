@@ -1,3 +1,16 @@
-<p>
-  display-user-profile works!
-</p>
+<div class="panel">
+  <div class="profile" *ngIf="profile">
+    <div class="profile-avatar">
+      <a [href]="profile.authorUrl" target="_blank">
+        <img class="profile-image" src="{{profile.thumbnail}}" />
+      </a>
+    </div>
+    <div class="profile-data">
+      <a [href]="profile.authorUrl" target="_blank">
+        {{profile.author}}
+      </a>
+      <br /> Albums number:
+      <label>{{profile.albumCount}}</label>
+    </div>
+  </div>
+</div>

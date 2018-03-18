@@ -1,21 +1,31 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { UserProfile } from '../../../models';
+import { UserProfile, ProfileFeed } from '../../../models';
+import { FetcherService } from '../..';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/finally';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector: 'app-user-profile',
-    templateUrl: './user-profile.component.html',
-    styleUrls: ['./user-profile.component.scss']
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-    email: string;
-    @Output() onUserProfile = new EventEmitter<UserProfile>();
+  @Input() email: string;
+  @Output() onUserId = new EventEmitter<string>();
 
-    constructor() { }
+  constructor() {}
 
-    ngOnInit() {
-    }
+  ngOnInit() {}
 
-    onFetchProfile() {
-        alert('fetching email: ' + this.email);
-    }
+  onFetchProfile(email) {
+    this.onUserId.emit(email);
+  }
+
+  errorHandler(error: any) {
+    return 'super-mega-error!!';
+  }
+
+  mapper(data: any) {}
 }

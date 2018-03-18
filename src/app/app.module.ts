@@ -8,6 +8,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { GoogleFetcherModule } from './google-fetcher/google-fetcher.module';
 import { GoogleDashboardComponent } from './google-fetcher/google-dashboard/google-dashboard.component';
 import { HttpModule } from '@angular/http';
+import { PicasaFetcherService } from './fetch-modules/google-fetcher/picasa-fetcher.service';
+import { FetcherService } from './shared';
 
 const appRoutes: Routes = [
   { path: 'google', component: GoogleDashboardComponent }
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
     GoogleFetcherModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{ provide: FetcherService, useClass: PicasaFetcherService }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
