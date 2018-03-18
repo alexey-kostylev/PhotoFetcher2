@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormsModule } from '@angular/forms';
 import { DisplayUserProfileComponent } from './display-user-profile/display-user-profile.component';
+import { SpinLoaderComponent } from './spin-loader/spin-loader.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule
+  imports: [CommonModule, FormsModule],
+  declarations: [
+    UserProfileComponent,
+    DisplayUserProfileComponent,
+    SpinLoaderComponent
   ],
-  declarations: [UserProfileComponent, DisplayUserProfileComponent],
   exports: [
-    UserProfileComponent
+    UserProfileComponent,
+    DisplayUserProfileComponent,
+    SpinLoaderComponent
   ]
 })
-export class FetchComponentsModule { }
+export class FetchComponentsModule {}
