@@ -3,3 +3,6 @@
     <app-display-user-profile *ngIf="!loading" [profile]="userProfile"></app-display-user-profile>
     <app-spin-loader [loading]="loading"></app-spin-loader>
 </div>
+<div>
+    <app-album-list *ngIf="!loading" [albums]="userAlbums"></app-album-list>
+</div>

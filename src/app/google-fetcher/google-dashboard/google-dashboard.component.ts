@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfile, PhotoAlbum, ProfileFeed } from '../../models';
+import { UserProfile, PhotoAlbum, ProfileFeed, AlbumEntry } from '../../models';
 import { FetcherService } from '../../shared';
 import { Observable } from 'rxjs/Observable';
 
@@ -14,7 +14,7 @@ export class GoogleDashboardComponent implements OnInit {
   email: string;
   userProfile: UserProfile;
 
-  userAlbums: Array<PhotoAlbum>;
+  userAlbums: Array<AlbumEntry>;
 
   currentAlbum: PhotoAlbum;
 
@@ -36,6 +36,7 @@ export class GoogleDashboardComponent implements OnInit {
       .subscribe((d: ProfileFeed) => {
         this.userProfileFeed = d;
         this.userProfile = d.userProfile;
+        this.userAlbums = d.albums;
         localStorage.setItem(this.emailKey, email);
       });
   }

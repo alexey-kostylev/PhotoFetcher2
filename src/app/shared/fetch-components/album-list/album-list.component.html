@@ -1,0 +1,29 @@
+<div>
+  <div class="albumList panel">
+    <div class="albumListContainer">
+    </div>
+
+    <div class="list-header">
+      <label>Albums fetched:</label>&nbsp;
+      <span>{{albums?.length}}</span>
+      <button style="margin-left: 10px;" class="btn btn-primary btn-xs" (click)="fetchAllAlbums()">Fetch all
+        <span class="badge">{{ albums?.length }}</span>
+      </button>
+      <span style="margin-left: 10px;" class="text-info small">Click on an album to fetch photos</span>
+    </div>
+    <div class="list-content">
+      <div class="albumItem" title="{{album.title}}" *ngFor="let album of albums">
+        <div (click)="loadAlbum(album.albumId)">
+          <img [src]="album.thumbnail" alt="image not found" />
+          <div class="album-description">
+            <span class="title album-title" title="{{album.title}}">{{album.title}}</span>
+            <span class="title" title="published: {{album.published | date:'yyyy-MM-dd HH:mm'}}">{{album.published | date:'yyyy-MM-dd HH:mm'}}</span>
+            <span class="title">photos:
+              <span class="text-info" title="{{album.numberOfPhotos}}">{{album.numberOfPhotos}}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
